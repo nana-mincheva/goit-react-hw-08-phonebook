@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  margin: auto;
+  max-width: 800px;
+  justify-content: center;
+}
+.text {
+  margin: 0;
+  margin-top: 300px;
+  min-width: 300px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  color: #ff00dd;
+  padding: 10px;
+  font-size: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 11px;
+  overflow: hidden;
+  border: none;
+  background: #ff00dd;
+  color: #000000;
+  box-shadow: 0 0 5px #ff00dd, 0 0 25px #ff00dd, 0 0 50px #ff00dd,
+    0 0 200px #ff00dd;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+.text:nth-child(1) {
+  filter: hue-rotate(110deg);
+}

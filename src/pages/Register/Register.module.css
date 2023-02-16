@@ -1,0 +1,180 @@
+.container {
+  margin: auto;
+  padding: 0;
+  max-width: 800px;
+}
+.text {
+  margin: 0;
+  margin-top: 272px;
+  margin-bottom: 60px;
+  padding-left: auto;
+  padding-right: auto;
+  width: 340px;
+  display: flex;
+  justify-content: center;
+  color: #ff00dd;
+  padding: 10px;
+  font-size: 40px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 10px;
+  overflow: hidden;
+  border: none;
+  background: #ff00dd;
+  color: #050801;
+  box-shadow: 0 0 5px #ff00dd, 0 0 25px #ff00dd, 0 0 50px #ff00dd,
+    0 0 200px #ff00dd;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+.text:nth-child(1) {
+  filter: hue-rotate(110deg);
+}
+.loginBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.loginBox .userBox {
+  position: relative;
+}
+.loginBox .userBox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.loginBox .userBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 18px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.loginBox .userBox input:focus ~ label,
+.loginBox .userBox input:valid ~ label {
+  top: -30px;
+  left: 0;
+  color: #ff00dd;
+  font-size: 16px;
+}
+.loginBox .userBox input:focus ~ label:nth-child(2),
+.loginBox .userBox input:valid ~ label:nth-child(2) {
+  filter: hue-rotate(110deg);
+}
+.button {
+  background: #000;
+  min-width: 100px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  color: #ff00dd;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  border: none;
+}
+.button:hover {
+  background: #ff00dd;
+  color: #050801;
+  box-shadow: 0 0 5px #ff00dd, 0 0 25px #ff00dd, 0 0 50px #ff00dd,
+    0 0 200px #ff00dd;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+/* .button:nth-child(1) {
+  filter: hue-rotate(270deg);
+} */
+.button:nth-child(4) {
+  filter: hue-rotate(110deg);
+}
+span {
+  position: absolute;
+  display: block;
+}
+.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff00dd);
+  animation: animate1 1s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+.right {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ff00dd);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+.bottom {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ff00dd);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.left {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ff00dd);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
