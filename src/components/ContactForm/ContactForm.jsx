@@ -34,7 +34,7 @@ export default function ContactForm({ addContact }) {
           required
           onChange={formNameChange}
         />
-        <p className={css.title}>Contact Number</p>
+        <p className={css.title}>Number</p>
         <input
           className={css.input}
           placeholder=" Phone number"
