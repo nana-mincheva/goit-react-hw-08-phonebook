@@ -23,10 +23,10 @@ export default function ContactForm({ addContact }) {
   return (
     <div className={css.container}>
       <form onSubmit={formSubmit}>
-        <p className={css.title}>Contact Name</p>
+        <p className={css.title}>Name</p>
         <input
           className={css.input}
-          placeholder="Name"
+          placeholder="Contact Name"
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -37,7 +37,7 @@ export default function ContactForm({ addContact }) {
         <p className={css.title}>Number</p>
         <input
           className={css.input}
-          placeholder=" Phone number"
+          placeholder=" 257-42-21"
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
