@@ -16,6 +16,7 @@ const getActions = type => extraActions.map(action => action[type]);
     isLoading: false,
     error: null,
    },
+  reducers: {},
    extraReducers: builder =>
      builder
        .addCase(fetchContacts.fulfilled, (state, action) => {
@@ -30,7 +31,7 @@ const getActions = type => extraActions.map(action => action[type]);
        .addCase(addContacts.fulfilled, (state, action) => {
          state.entities.push(action.payload);
    })
-.addMatcher(isAnyOf(...getActions("pending")), state => {
+      .addMatcher(isAnyOf(...getActions("pending")), state => {
         state.isLoading = true;
       })
       .addMatcher(isAnyOf(...getActions("rejected")), (state, action) => {
@@ -110,4 +111,5 @@ const getActions = type => extraActions.map(action => action[type]);
 //     },
 //   },
 // });
+
 export default ContactSlice.reducer;
