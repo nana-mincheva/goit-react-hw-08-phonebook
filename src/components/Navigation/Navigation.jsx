@@ -9,7 +9,7 @@ export const Navigation = () => {
   return (
     <ul className={css.itemList}>
       <li className={css.item}>
-        <NavLink className={css.link} to={'goit-react-hw-08-phonebook'}>
+        <NavLink className={css.link} to={'/'}>
           <span></span>
           <span></span>
           <span></span>
