@@ -2,13 +2,11 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import shortid from 'shortid';
-
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 import { contactFilter } from 'redux/filter/filterSlice';
 import * as contactsOperations from '../../redux/contacts/contactsOperation';
-
 import css from './Contacs.module.css';
 
 const Contacs = () => {
@@ -18,7 +16,7 @@ const Contacs = () => {
   const addContact = ({ name, number }) => {
     if (
       contacts.find(contact => {
-        return contact.name === name;
+        return contact.name.toLowerCase() === name.toLowerCase() || contact.number === number;
       })
     ) {
       return alert(`${name} is already in contacts`);

@@ -1,8 +1,12 @@
+import React from 'react';
 import { useState } from 'react';
-
+import { useDispatch } from 'react-redux';
+import { addContacts } from 'redux/contacts/contactsOperation';
 import css from './ContactForm.module.css';
 
-export default function ContactForm({ addContact }) {
+export default function ContactForm() {
+  const dispatch = useDispatch();
+
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -16,7 +20,7 @@ export default function ContactForm({ addContact }) {
 
   const formSubmit = e => {
     e.preventDefault();
-    addContact({ name, number });
+    dispatch(addContacts({ name, number }));
     e.currentTarget.reset();
   };
 
