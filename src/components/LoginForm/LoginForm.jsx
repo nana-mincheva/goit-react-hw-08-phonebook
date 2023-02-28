@@ -1,23 +1,25 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import * as authOperation from '../../redux/auth/authOperation';
+import * as authOperation from 'redux/auth/authOperation';
 
-import css from './Login.module.css';
+import css from './LoginForm.module.css';
 
-const Login = () => {
+export function LoginForm() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleCange = ({ target: { name, value } }) => {
     switch (name) {
-      case 'email':
-        return setEmail(value);
-      case 'password':
-        return setPassword(value);
-      default:
-        console.log('Invalid subscription type');
+        case 'email':
+            setEmail(value);
+            break;
+        case 'password':
+            setPassword(value);
+            break;
+        default:
+           return;
     }
   };
 
@@ -25,9 +27,8 @@ const Login = () => {
     e.preventDefault();
     dispatch(authOperation.logIn({ email, password }));
     e.currentTarget.reset();
-    setEmail('');
-    setPassword('');
-  };
+    };
+    
   return (
     <main className={css.container}>
       <div className={css.loginBox}>
@@ -68,4 +69,3 @@ const Login = () => {
     </main>
   );
 };
-export default Login;

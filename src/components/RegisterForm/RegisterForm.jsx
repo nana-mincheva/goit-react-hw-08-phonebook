@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux';
 
 import * as authOperation from '../../redux/auth/authOperation';
 
-import css from './Register.module.css';
+import css from './RegisterForm.module.css';
 
-const Register = () => {
+export function RegisterForm () {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -20,7 +20,8 @@ const Register = () => {
       case 'password':
         return setPassword(value);
       default:
-        console.log('Invalid subscription type');
+        console.error('Invalid subscription type');
+        break;
     }
   };
 
@@ -83,4 +84,3 @@ const Register = () => {
     </main>
   );
 };
-export default Register;
