@@ -13,9 +13,11 @@ const initialState = {
   isRefreshing: false,
 };
 
+const savedState = JSON.parse(localStorage.getItem('auth')) || initialState;
+
 const AuthSlice = createSlice({
   name: 'auth',
-  initialState,
+  initialState: savedState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -27,6 +29,7 @@ const AuthSlice = createSlice({
         state.token = action.payload.token;
         state.isloggedIn = true;
         state.isRefreshing = false;
+        localStorage.setItem('auth', JSON.stringify(state));
       })
       .addCase(registerUser.rejected, (state) => {
         state.isRefreshing = false;
@@ -39,6 +42,7 @@ const AuthSlice = createSlice({
         state.token = action.payload.token;
         state.isloggedIn = true;
         state.isRefreshing = false;
+        localStorage.setItem('auth', JSON.stringify(state));
       })
       .addCase(logInUser.rejected, (state) => {
         state.isRefreshing = false;
@@ -51,6 +55,7 @@ const AuthSlice = createSlice({
         state.token = null;
         state.isloggedIn = false;
         state.isRefreshing = false;
+        localStorage.setItem('auth', JSON.stringify(state));
       })
       .addCase(logOutUser.rejected, (state) => {
         state.isRefreshing = false;
@@ -62,6 +67,7 @@ const AuthSlice = createSlice({
         state.user = { ...action.payload };
         state.isloggedIn = true;
         state.isRefreshing = false;
+        localStorage.setItem('auth', JSON.stringify(state));
       })
       .addCase(fetchCurrentUser.rejected, (state) => {
         state.isRefreshing = false;
@@ -70,3 +76,4 @@ const AuthSlice = createSlice({
 });
 
 export default AuthSlice.reducer;
+

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import css from './ContactList.module.css';
 import { deleteContacts } from 'redux/contacts/contactsOperation';
@@ -37,14 +36,4 @@ const ContactList = () => {
   );
 };
 
-ContactList.prototype = {
-  filter: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.number.isRequired,
-    })
-  ),
-  onDeleteContact: PropTypes.func.isRequired,
-};
 export default ContactList;
