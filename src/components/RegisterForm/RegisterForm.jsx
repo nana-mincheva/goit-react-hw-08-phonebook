@@ -20,8 +20,7 @@ export function RegisterForm () {
       case 'password':
         return setPassword(value);
       default:
-        console.error('Invalid subscription type');
-        break;
+        return('Invalid subscription type');
     }
   };
 

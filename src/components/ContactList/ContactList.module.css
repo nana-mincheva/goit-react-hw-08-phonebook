@@ -23,5 +23,8 @@
 
 .btnDelete:hover,
 .btnDelete:focus {
-  background-color: #b5ddf2;
-}
+  background-color: #f08812;
+  box-shadow: 0 0 5px #f08812, 0 0 25px #f08812, 0 0 50px #f08812,
+      0 0 200px #f08812;
+  }
+
