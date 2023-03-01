@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import css from './ContactList.module.css';
 import { deleteContacts } from 'redux/contacts/contactsOperation';
+import * as contactsOperations from '../../redux/contacts/contactsOperation';
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,13 @@ const ContactList = () => {
   const filterContact = contacts.filter(contact => {
     return contact.name.toLowerCase().includes(filter.toLowerCase());
   });
+
+
+  useEffect(() => {
+    dispatch(contactsOperations.fetchContacts());
+  }, [dispatch]);
+
+
 
   return (
     <ul className={css.list}>
