@@ -20,7 +20,6 @@ const ContactList = () => {
   }, [dispatch]);
 
 
-
   return (
     <ul className={css.list}>
       {filterContact.length > 0 &&
